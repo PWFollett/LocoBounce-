@@ -32,7 +32,7 @@ export const authenticate = async () => {
     )
     // or history.push('/login') if your Login page is inside the same app
   }
-
+  
   export const AuthenticatedRoute = ({
     component: Component,
     exact,
@@ -50,7 +50,6 @@ export const authenticate = async () => {
       }
     />
   )
-  
   class AuthenticateBeforeRender extends Component {
     state = {
       isAuthenticated: false,
