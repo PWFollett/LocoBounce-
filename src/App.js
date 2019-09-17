@@ -1,45 +1,22 @@
-import ReactDOM from 'react-dom'
-import React, { useState, useEffect } from 'react';
-import { decode } from 'he';
-import { withAuth } from '@okta/okta-react';
-import { useAuth } from '/authentication';
-
-
-const App = withAuth(({ auth }) => {
-  const [city, GetCity] = useState('');
-  const [authenticated, user] = useAuth(auth);
-
-  const fetchCity = async signal => {
-    const url = new URL('(https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/scores/)');
-    if (user) {
-      url.searchParams.set('firstName', user.given_name);
-      url.searchParams.set('lastName', user.family_name);
-    }
-    const response = await fetch(url, { signal });
-    const { value } = await response.json();
-
-    GetCity(decode(value.city));
-
-
-return (
-
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>{city || '...'}</p>
-      <button className="App-link" onClick={() => GetCity('')}>
-        
-      </button>
-      {authenticated !== null && (
-        <button
-          onClick={() => authenticated ? auth.logout() : auth.login()}
-          className="App-link"
-        >
-          Log {authenticated ? 'out' : 'in'}
-        </button>
-      )}
-    </header>
-  </div>
-)};
-
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
+import Home from './Home';
+ 
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Security issuer='https://{yourOktaDomain}.com/oauth2/default'
+                  clientId='{clientId}'
+                  redirectUri={window.location.origin + '/implicit/callback'} >
+          <Route path='/' exact={true} component={Home}/>
+          <SecureRoute path='/protected' component={Protected}/>
+          <Route path='/implicit/callback' component={ImplicitCallback} />
+        </Security>
+      </Router>
+    );
+  }
+}
+ 
 export default App;
