@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { decode } from 'he';
 import { withAuth } from '@okta/okta-react';
 import { useAuth } from '/authentication';
-import './App.css';
 
 const App = withAuth(({ auth }) => {
   const [city, GetCity] = useState('');
