@@ -1,5 +1,11 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Security, ImplicitCallback } from '@okta/okta-react';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import registerServiceWorker from "./registerServiceWorker";
+
 ReactDOM.render(
   <Router>
     <Security
@@ -13,3 +19,5 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root')
 );
+
+export default App;
