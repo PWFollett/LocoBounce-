@@ -57,7 +57,7 @@ export default withAuth(class MessageList extends Component {
       try {
         const response = await fetch('http://localhost:{serverPort}/api/messages', {
           headers: {
-            Authorization: 'Bearer ' + await this.props.auth.getAccessToken()
+            Authorization: '' + await this.props.auth.getAccessToken()
           }
         });
         const data = await response.json();
