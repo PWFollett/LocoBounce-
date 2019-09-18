@@ -2,14 +2,15 @@
 import React, { Component } from 'react';
 import { Router, Route } from 'react-router-dom';
 import { Security, SecureRoute, ImplicitCallback, Auth } from '@okta/okta-react';
-import Home from './Home';
+import Home from '/home';
+import Protected from './Protected';
 import { createBrowserHistory } from 'history'
  
 const history = createBrowserHistory();
  
 const auth = new Auth({
   history,
-  issuer: 'https://{yourOktaDomain}.com/oauth2/default',
+  issuer: 'https://{outlook-pwf592110.okta.com}.com/oauth2/default',
   clientId: '{clientId}',
   redirectUri: window.location.origin + '/implicit/callback',
 });
