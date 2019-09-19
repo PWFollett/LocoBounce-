@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@okta/okta-react": "^1.2.3",
+    "cors": "^2.8.5",
     "decode": "^0.3.0",
     "eslint": "^6.4.0",
     "he": "^1.2.0",
