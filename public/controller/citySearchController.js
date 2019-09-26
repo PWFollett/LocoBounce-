@@ -1,1 +1,1 @@
-PLACEHOLDER
+ const db = require("../models");
