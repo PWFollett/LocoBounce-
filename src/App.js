@@ -1,17 +1,15 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Jumbotron from "./components/Jumbotron";
-import Card from "./components/Card";
+import Navbar from "./components/Navbar/index";
+import QualityOfLifeJS from "./components/widgets/QualityOfLifeJS.js"
+import "./components/Navbar/style.css";
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <Navbar />
-      <Jumbotron />
-      <Card />
+      {/* <QualityOfLifeJS /> */}
     </div>
   );
 }
 
 export default App;
-
