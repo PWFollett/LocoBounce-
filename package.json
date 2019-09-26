@@ -5,9 +5,7 @@
   "dependencies": {
     "@okta/okta-react": "^1.2.3",
     "axios": "^0.19.0",
-=======
     "cors": "^2.8.5",
-
     "decode": "^0.3.0",
     "eslint": "^6.4.0",
     "express": "^4.17.1",
@@ -19,6 +17,7 @@
     "protected": "^1.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
     "react-router": "^5.0.1",
     "react-scripts": "3.1.1"
   },
