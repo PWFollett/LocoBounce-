@@ -1,3 +1,31 @@
+html, body {
+  background-color: #ffffff;
+  background-image: url("./assets/images/siteBG.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+#locoLogo {
+  font-weight: bold;
+  -webkit-text-fill-color: #4fe7ff;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #000000;
+  text-shadow: 4px 4px 4px #7d9fcf;
+  cursor: pointer;
+}
+
+#locoLogo:hover {
+  font-weight: bold;
+  -webkit-text-fill-color: #4fe7ff;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 4px 4px 4px lightblue;
+  cursor: pointer;
+}
+
+.navbar {
+  background-color: #162953 !important;
+}
+
 .App {
   text-align: center;
 }
@@ -32,8 +60,7 @@
   }
 }
 
-
 .navbar {
   background-color: red;
-  width:100%;
+  width: 100%;
 }
