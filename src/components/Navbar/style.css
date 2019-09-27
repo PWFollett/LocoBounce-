@@ -15,7 +15,7 @@ html, body {
 }
 
 .brand-icon {
-    font-size: 200%;
+    font-size: 300%;
     color: #53e8ff;
 }
 
@@ -55,13 +55,25 @@ ul {
     text-decoration: none;
     border: 2px solid;
     border-radius: 20%;
+    margin-right: 20px;
 }
 
 .navigation {
     position: relative;
     top: -235px;
-    margin-top: 14px;
+    margin-top: 20px;
     margin-left: 10px;
     color: #ffffff;
     float: left;
+}
+
+.btnWidgets {
+    position: relative;
+    top: -15px;
+    /* Do Flex */
+    display: flex;
+    /* Align Items Center */
+    align-items: center;
+    /* Align Content Center */
+    justify-content: center;
 }
