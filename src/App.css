@@ -4,6 +4,18 @@ html, body {
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
+.loginlink {
+  background: none;
+  border: none;
+  font-size: 200% !important;
+  color: #017bff;
+}
+
+.faLoginLink {
+  padding: 10px;
+  border-radius: 80%;
+}
+
 #locoLogo {
   font-weight: bold;
   -webkit-text-fill-color: #4fe7ff;
