@@ -10,93 +10,88 @@ import config from '../../app.config';
 function Navbar() {
   return (
     // Navbar Container.
-    <nav class="navbar navbar-expand-lg text-white bg-light shadow-md">
+    <nav className="navbar navbar-expand-lg text-white bg-light shadow-md">
       {/* Navbar Brand */}
-      <a class="navbar-brand" href="/"><h1 className="animated bounce" id="locoLogo">LocoBounce</h1></a>
+      <a className="navbar-brand" href="/"><h1 className="animated bounce" id="locoLogo">LocoBounce</h1></a>
       {/* Mobile Navigation Link Collapse */}
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span className="navbar-toggler-icon"></span>
       </button>
       {/* Navbar Navigation (And Collapse Container) */}
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
           {/* Homepage Route */}
-          <li class="nav-item active">
-            <Link class="nav-link" href="#" to="/">Home</Link>  <span class="sr-only">(current)</span>
+          <li className="nav-item active">
+            <Link className="nav-link" to="/">Home</Link>  <span className="sr-only">(current)</span>
           </li>
           {/* Registration Page Route */}
-          <li class="nav-item active">
-            <Link class="nav-link" href="#" to="/register">Register</Link>  <span class="sr-only">(current)</span>
+          <li className="nav-item active">
+            <Link className="nav-link" to="/register">Register</Link>  <span className="sr-only">(current)</span>
           </li>
           {/* Widget Dropdown Menu */}
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropWidgets" data-toggle="dropdown">
+          <div className="dropdown">
+            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropWidgets" data-toggle="dropdown">
               Tools
             </button>
-            <div class="dropdown-menu">
-              <button class="dropdown-item" onclick="tabs(event, 'LifeQaulityScore')">Life Quality Score</button>
+            <div className="dropdown-menu">
               {/* All Widget Click Events */}
-              <button class="dropdown-item" type="button">Cost of Living</button>
-              <button class="dropdown-item" type="button">Job Salary Calculator</button>
-              <button class="dropdown-item" type="button">Safety</button>
-              <button class="dropdown-item" type="button">Education</button>
-              <button class="dropdown-item" type="button">LGBT Rights</button>
-              <button class="dropdown-item" type="button">Outdoor</button>
-              <button class="dropdown-item" type="button">Startups Scene</button>
+              <Link className="dropdown-item" to="/Qaulity">Life Quality Score</Link>
+              <Link className="dropdown-item" to="/Cost">Cost of Living</Link>
+              <Link className="dropdown-item" to="/Salaries">Job Salary Calculator</Link>
+              <Link className="dropdown-item" to="/Safety">Safety</Link>
+              <Link className="dropdown-item" to="/Education">Education</Link>
+              <Link className="dropdown-item" to="/Lgbt">LGBT Rights</Link>
+              <Link className="dropdown-item" to="/Startups">Startups Scene</Link>
             </div>
           </div>
         </ul>
         {/* Sign In / Register Routing */}
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <Link class="nav-link loginlink" data-toggle="modal" data-target="#loginRegister" href="#" to="/login">
-              <i class="faLoginLink fa fa-user" aria-hidden="true"></i> Sign In
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
+            <Link className="nav-link loginlink" data-toggle="modal" data-target="#loginRegister" href="#" to="/login">
+              <i className="faLoginLink fa fa-user" aria-hidden="true"></i> Sign In
             </Link>
           </li>
         </ul>
       </div>
 
       {/* Sign In / Register Modal */}
-      <div class="modal fade text-dark" id="loginRegister" tabindex="-1" role="dialog" aria-hidden="true">
+      <div className="modal fade text-dark" id="loginRegister" tabIndex="-1" role="dialog" aria-hidden="true">
         {/* Modal Document Container */}
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
             {/* Modal Register / Login TABS */}
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                <li class="nav-item active">
-                  <Link class="nav-link" href="#" to="/login">Sign In</Link>  <span class="sr-only">(current)</span>
-                </li>
+            <ul className="nav nav-tabs" id="myTab" role="tablist">
+              <li className="nav-item active">
+                <Link className="nav-link" href="#" to="/login">Sign In</Link>  <span className="sr-only">(current)</span>
               </li>
               {/* Sign Up / Register */}
-              <li class="nav-item">
-                <li class="nav-item active">
-                  <Link class="nav-link" href="#" to="/register">Register An Account</Link>  <span class="sr-only">(current)</span>
-                </li>
+              <li className="nav-item active">
+                <Link className="nav-link" href="#" to="/register">Register An Account</Link>  <span className="sr-only">(current)</span>
               </li>
             </ul>
             {/* Modal Body Container */}
-            <div class="modal-body">
+            <div className="modal-body">
               {/* Modal Tabs: */}
-              <div class="tab-content" id="myTabContent">
+              <div className="tab-content" id="myTabContent">
                 {/* Login Form */}
-                <div class="tab-pane fade show active" id="home" role="tabpanel">
+                <div className="tab-pane fade show active" id="home" role="tabpanel">
                   <Route path="/login" render={() => <LoginPage baseUrl={config.url} />} />
                 </div>
               </div>
-              <div class="tab-content" id="myTabContent">
+              <div className="tab-content" id="myTabContent">
                 {/* Registration Form */}
-                <div class="tab-pane fade show active" id="home" role="tabpanel">
+                <div className="tab-pane fade show active" id="home" role="tabpanel">
                   <Route path="/register" component={RegistrationForm} />
                 </div>
               </div>
             </div>
             {/* Modal Contols: */}
-            <div class="modal-footer">
+            <div className="modal-footer">
               {/* Close Modal */}
-              <button type="button" class="btn btn-default border" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-default border" data-dismiss="modal">Close</button>
               {/* Sign In (Must Be Authenticated!!!!) */}
-              <button type="button" class="btn btn-info"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
+              <button type="button" className="btn btn-info"><i className="fa fa-sign-in" aria-hidden="true"></i> Login</button>
             </div>
           </div>
         </div>

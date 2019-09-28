@@ -18,3 +18,10 @@ function tabs(e, tabName) {
     // Show the Widget Clicked.
     document.getElementById(tabName).style.display = "block";
 }
+
+// For MVP Reasons, this should be changed in the future.
+// This just refreshes the page on new routes to avoid
+// any duplicate widgets populating on the main view.
+function updateWidget() {
+    window.location.reload();
+}
