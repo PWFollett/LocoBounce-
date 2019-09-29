@@ -1,5 +1,5 @@
 .footer {
-    position: fixed;
+    position: absolute;
     background-color: #162953 !important;
     border-top: 4px solid #ffffff;
     box-shadow: 5px 5px 5px 5px;

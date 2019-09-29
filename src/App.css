@@ -1,6 +1,6 @@
 html, body {
   background-color: #ffffff;
-  background-image: url("./assets/images/siteBG.png");
+  background-image: url("https://www.transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
@@ -16,22 +16,14 @@ html, body {
   border-radius: 80%;
 }
 
-#locoLogo {
-  font-weight: bold;
-  -webkit-text-fill-color: #4fe7ff;
-  -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: #000000;
-  text-shadow: 4px 4px 4px #7d9fcf;
-  cursor: pointer;
+#loco {
+  font-family: 'Turret Road', cursive;
+  color: #d4583c;
 }
 
-#locoLogo:hover {
-  font-weight: bold;
-  -webkit-text-fill-color: #4fe7ff;
-  -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: black;
-  text-shadow: 4px 4px 4px lightblue;
-  cursor: pointer;
+#bounce {
+  font-family: 'Turret Road', cursive;
+  color: #6a70f3;
 }
 
 .navbar {
