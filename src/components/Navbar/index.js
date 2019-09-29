@@ -12,7 +12,11 @@ function Navbar() {
     // Navbar Container.
     <nav className="navbar navbar-expand-lg text-white bg-light shadow-md">
       {/* Navbar Brand */}
-      <a className="navbar-brand" href="/"><h1 className="animated bounce" id="locoLogo">LocoBounce</h1></a>
+      <a className="navbar-brand" href="/">
+        <h1 className="animated bounce" id="locoLogo">
+          <img src="../../assets/images/locoLogo.png" alt="locoLogo.png" />
+        </h1>
+      </a>
       {/* Mobile Navigation Link Collapse */}
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span className="navbar-toggler-icon"></span>
