@@ -1,0 +1,19 @@
+#widgetSelector {
+    border: 1px solid #007afe;
+    color: #007bff;
+}
+
+.dropdown-item {
+    background-color: #57a4d8;
+    padding: 10px;
+    color: #ffffff;
+}
+
+.dropdown-item:hover {
+    background-color: #5f94c9;
+}
+
+.divider {
+    background-color: #000000 !important;
+    margin: 0;
+}

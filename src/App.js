@@ -27,7 +27,7 @@ export default class App extends Component {
         <main>
           {/* All App Widgets */}
           <Switch>
-            {/* <Route path="/Safety" exact render={() => <Teleport src="https://teleport.org/cities/aarhus/widget/crime/?currency=USD" />} />
+            <Route path="/Safety" exact render={() => <Teleport src="https://teleport.org/cities/aarhus/widget/crime/?currency=USD" />} />
             <Route path="/Salaries" exact render={() => <Teleport src="https://teleport.org/cities/aarhus/widget/salaries/?currency=USD" />} />
             <Route path="/Startups" exact render={() => <Teleport src="https://teleport.org/cities/aarhus/widget/startup/?currency=USD" />} />
             <Route path="/Lgbt" exact render={() => <Teleport src="https://teleport.org/cities/aarhus/widget/tolerance/?currency=USD" />} />
@@ -35,7 +35,7 @@ export default class App extends Component {
             <Route path="/Cost" exact render={() => <Teleport src="https://teleport.org/cities/aarhus/widget/costs/?currency=USD" />} />
             <Route path="/Climate" exact render={() => <Teleport src="https://teleport.org/cities/aarhus/widget/weather/?currency=USD" />} />
             <Route path="/Qaulity" exact render={() => <Teleport src="https://teleport.org/cities/aarhus/widget/scores/?currency=USD" />} />
-             */}
+
             <Route path="/implicit/callback" component={ImplicitCallback} />
 
             <SecureRoute path="/profile" component={ProfilePage} />
