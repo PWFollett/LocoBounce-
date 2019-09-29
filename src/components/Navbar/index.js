@@ -14,7 +14,7 @@ function Navbar() {
       {/* Navbar Brand */}
       <a className="navbar-brand" href="/">
         <h1 className="animated bounce" id="locoLogo">
-          <img src="../../assets/images/locoLogo.png" alt="locoLogo.png" />
+          <img src="https://github.com/PWFollett/LocoBounce-/blob/master/src/assets/images/locoLogo.png?raw=true" alt="locoLogo.png" />
         </h1>
       </a>
       {/* Mobile Navigation Link Collapse */}
