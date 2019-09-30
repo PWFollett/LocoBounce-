@@ -26,28 +26,8 @@ function Navbar() {
         <ul className="navbar-nav">
           {/* Homepage Route */}
           <li className="nav-item active">
-            <Link className="nav-link" to="/">Home</Link>  <span className="sr-only">(current)</span>
+            <Link id="homeLink" className="nav-link" to="/">Home</Link>  <span className="sr-only">(current)</span>
           </li>
-          {/* Registration Page Route */}
-          <li className="nav-item active">
-            <Link className="nav-link" to="/register">Register</Link>  <span className="sr-only">(current)</span>
-          </li>
-          {/* Widget Dropdown Menu */}
-          <div className="dropdown">
-            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropWidgets" data-toggle="dropdown">
-              Tools
-            </button>
-            <div className="dropdown-menu">
-              {/* All Widget Click Events */}
-              <Link className="dropdown-item" to="/Qaulity">Life Quality Score</Link>
-              <Link className="dropdown-item" to="/Cost">Cost of Living</Link>
-              <Link className="dropdown-item" to="/Salaries">Job Salary Calculator</Link>
-              <Link className="dropdown-item" to="/Safety">Safety</Link>
-              <Link className="dropdown-item" to="/Education">Education</Link>
-              <Link className="dropdown-item" to="/Lgbt">LGBT Rights</Link>
-              <Link className="dropdown-item" to="/Startups">Startups Scene</Link>
-            </div>
-          </div>
         </ul>
         {/* Sign In / Register Routing */}
         <ul className="navbar-nav ml-auto">
