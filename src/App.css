@@ -1,8 +1,8 @@
 html, body {
   scroll-behavior: smooth;
   background-color: #ffffff;
-  background-image: url("https://www.transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  font-family: 'Noto Serif', serif;
+  background-image: url("./assets/images/siteBG.png");
 }
 
 body::-webkit-scrollbar {

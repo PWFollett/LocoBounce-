@@ -11,3 +11,7 @@
 .dropdown-item:hover {
     background-color: #5f94c9;
 }
+
+#toolbelt {
+    margin-bottom: 100px !important;
+}
