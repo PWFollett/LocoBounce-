@@ -21,6 +21,7 @@ import Jumbotron from './Jumbotron';
 import AlertSignedOut from './alert-signed-out/AlertSignedOut.js'
 import AlertAccountCreated from './alert-account-created/AlertAccountCreated';
 import HomePage from '../components/HomePage/Home';
+import City from "./pages/City";
 
 export default class App extends Component {
   render() {
@@ -34,6 +35,7 @@ export default class App extends Component {
 
               <Route exact path="/" component={() => <Jumbotron />} />
               <Switch>
+                  <Route exact path="/citylist" component={City} />
                   <Route path="/Safety" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/crime/?currency=USD" />} />
                   <Route path="/Salaries" exact render={() => <Teleport src="https://teleport.org/cities/pittsburgh/widget/salaries/?currency=USD" />} />
                   <Route path="/Startups" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/startup/?currency=USD" />} />
