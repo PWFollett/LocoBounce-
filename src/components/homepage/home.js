@@ -9,7 +9,7 @@ export default class HomePage extends React.Component {
             <div>
                 {/* LocoBounce Toolbelt */}
                 <div className="container">
-                    <div className="card-deck mb-3 text-center">
+                    <div id="toolbelt" className="card-deck text-center">
                         <div className="card mb-4 border-primary shadow-sm">
                             {/* LocoBounce Toolbelt Header */}
                             <div className="card-header">
@@ -71,7 +71,6 @@ export default class HomePage extends React.Component {
                         </div>
                     </div>
                 </div>
-
             </div>
         )
     }
