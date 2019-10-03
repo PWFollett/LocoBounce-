@@ -22,7 +22,6 @@ import AlertSignedOut from './alert-signed-out/AlertSignedOut.js'
 import AlertAccountCreated from './alert-account-created/AlertAccountCreated';
 import HomePage from '../components/HomePage/Home';
 import City from "./pages/City";
-
 export default class App extends Component {
   render() {
     return (
