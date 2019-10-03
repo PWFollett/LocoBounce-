@@ -1,4 +1,5 @@
 // Dependencies.
+require('dotenv').config();
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
@@ -34,7 +35,7 @@ app.get('/', (req, res, next) => routeHome(req, res, next))
 app.get('/about', (req, res, next) => routeAbout(req, res, next))
 
 // Connect to the MongoDB Database.
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/citieslist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ourCities");
 
 // Start server.
 app.listen(PORT, function () {

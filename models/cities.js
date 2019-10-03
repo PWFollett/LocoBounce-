@@ -5,13 +5,9 @@ const citySchema = new Schema({
   name: {
     type: String,
     required: true
-  },
-  link: {
-    type: String,
-    required: true
   }
 });
 
-const City = mongoose.model("Book", citySchema);
+const City = mongoose.model("City", citySchema);
 
 module.exports = City;

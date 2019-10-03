@@ -1,5 +1,5 @@
 const devConfig = {
-    apiKey: "AIzaSyAbUuwSnfoJVuPDYossgG7lBye3n_27d8g",
+    apiKey: process.env.REACT_APP_DB_KEY,
     authDomain: "locobounce-8b61c.firebaseapp.com",
     databaseURL: "https://locobounce-8b61c.firebaseio.com",
     projectId: "locobounce-8b61c",
@@ -9,7 +9,7 @@ const devConfig = {
     measurementId: "G-1NDKGCRCZS"
 };
 const prodConfig = {
-    apiKey: "AIzaSyAbUuwSnfoJVuPDYossgG7lBye3n_27d8g",
+    apiKey: process.env.REACT_APP_DB_KEY,
     authDomain: "locobounce-8b61c.firebaseapp.com",
     databaseURL: "https://locobounce-8b61c.firebaseio.com",
     projectId: "locobounce-8b61c",
