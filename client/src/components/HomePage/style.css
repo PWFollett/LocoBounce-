@@ -1,0 +1,17 @@
+#widgetSelector {
+    border: 1px solid #007afe;
+    color: #007bff;
+}
+
+.dropdown-item {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.dropdown-item:hover {
+    background-color: #5f94c9;
+}
+
+#toolbelt {
+    margin-bottom: 100px !important;
+}

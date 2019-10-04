@@ -1,109 +1,121 @@
-const express = require('express')
-const exphbs = require('express-handlebars')
-const path = require('path')
-const helpers = require('./helpers')
-
+// Dependencies.
+const express = require('express');
+const exphbs = require('express-handlebars');
+const path = require('path');
 const mongoose = require("mongoose");
+var bodyParser = require('body-parser')
+const apiRoutes = require('./routes')
 const PORT = process.env.PORT || 3000;
-=======
-const OktaJwtVerifier = require('@okta/jwt-verifier');
-var cors = require('cors');
 
-// require routes
-const routeHome = require('./routes/home')
-const routeAbout = require('./routes/about')
-const app = express()
-// use express-handlebars view engine and set views template directory
+const db = require("./models");
+
+const citySeedsDB = require("./citySeedsDB");
+
+// create application/json parser
+//var jsonParser = bodyParser.json()
+ var bodyUrlParser =  bodyParser.urlencoded({ extended: true });
+
+
+// Required Routes.
+//const routeHome = require('./src/routes/users');
+//const routeAbout = require('./routes/about');
+
+// Create An Instance of An Express App.
+const app = express();
+
+//app.use(bodyParser.json())
+// create application/x-www-form-urlencoded parser
+//app.use( bodyParser.urlencoded({ extended: true }))
+
+// Use the Handlebars View Engine Templater.
 const hbs = exphbs.create({
-    partialsDir: __dirname + '/views/partials',
-    helpers: helpers()
-})
+  partialsDir: __dirname + '/views/partials',
+});
+
+// Using the Handlebars Engine.
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
-// Define middleware here
+
+// Define Middleware.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// serve static files form /public
-app.use(express.static(path.resolve(__dirname, 'public'))) // serve static files
-// Set your routes here
-app.get('/', (req, res, next) => routeHome(req, res, next))
-app.get('/about', (req, res, next) => routeAbout(req, res, next))
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/citieslist");
+
+// Serve Static Files From '/public'.
+app.use(express.static(path.resolve(__dirname, 'client/build')));
+
+
+app.use('/', apiRoutes);
+// Set Your Routes Here.
+//app.get('/', (req, res, next) => routeHome(req, res, next))
+//app.get('/about', (req, res, next) => routeAbout(req, res, next))
+
+
+// router.post('/survey', (req, res) => {
+//   const { id, update } = req.body;
+//   db.find(id, update, (err) => {
+//     if (err) return res.json({ success: false, error: err });
+//     return res.json({ success: true });
+//   });
+// });
+
+// Survey Database.
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/surveyDB";
+mongoose.connect(MONGODB_URI);
+
+// Store the mongoose connection string.
+var connectionDB = mongoose.connection;
+
+// If There Is An Error, Handle It.
+connectionDB.on("error", console.error.bind(console, "connection error:"));
+
+// Otherwise, open the successful connection.
+connectionDB.once("open", function () {
+  console.log("Connected to Mongoose!");
+});
+
+app.post("/survey", bodyUrlParser, function (req, res) {
+  console.log('submitting survey', req.data && req.data.userLocation)
+  res.send('submitted!')
+  return;
+
+
+  db.Survey.create({ userLocation: "Database Entry." }, function (err, response) {
+    // If There Are Errors, Handle Them. 
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(response);
+      console.log(response);
+    }
+  });
+});
+
+
+// app.get("/api/cities", function (req, res) {
+//   console.log('submitting cities data', req.data)
+//   db.City.insertMany({ name: citySeedsDB }, function (err, response) {
+//     // If There Are Errors, Handle Them.
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.json(response);
+//       console.log(response);
+//     }
+//   });
+// });
+
+
+// app.post('/survey', function (req, res) {
+//   new user({
+//     _id: req.body.userLocation,
+//   }).save(function (err, doc) {
+//     if (err) res.json(err);
+//     else res.send('Successfully inserted!');
+//   });
+// });
 
 // Start server.
-
-app.listen(PORT, function() {
-    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-  });
-=======
 app.listen(PORT, function () {
-    // Let us know the server has started successfully.
-    console.log("Server listening on: http://localhost:" + PORT);
-});
-
-
-const oktaJwtVerifier = new OktaJwtVerifier({
-  issuer: 'https://{dev-411107.okta.com}/oauth2/default',
-  clientId: '{0oa1dmdi0jcpltyEi357}',
-  assertClaims: {
-    aud: 'api://default',
-  },
-});
-
-/**
- * A simple middleware that asserts valid access tokens and sends 401 responses
- * if the token is not present or fails validation.  If the token is valid its
- * contents are attached to req.jwt
- */
-function authenticationRequired(req, res, next) {
-  const authHeader = req.headers.authorization || '';
-  const match = authHeader.match(/Bearer (.+)/);
-
-  if (!match) {
-    return res.status(401).end();
-  }
-
-  const accessToken = match[1];
-  const expectedAudience = 'api://default';
-
-  return oktaJwtVerifier.verifyAccessToken(accessToken, expectedAudience)
-    .then((jwt) => {
-      req.jwt = jwt;
-      next();
-    })
-    .catch((err) => {
-      res.status(401).send(err.message);
-    });
-}
-
-const app = express();
-
-/**
- * For local testing only!  Enables CORS for all domains
- */
-app.use(cors());
-
-/**
- * An example route that requires a valid access token for authentication, it
- * will echo the contents of the access token if the middleware successfully
- * validated the token.
- */
-app.get('/secure', authenticationRequired, (req, res) => {
-  res.json(req.jwt);
-});
-
-/**
- * Another example route that requires a valid access token for authentication, and
- * print some messages for the user if they are authenticated
- */
-app.get('/api/messages', authenticationRequired, (req, res) => {
-  res.json([{
-    message: 'Hello, word!'
-  }]);
-});
-
-app.listen(3000, () => {
-  console.log('Serve Ready on port 3000');
+  console.log(`🌎 ==> API Server now listening on PORT ${PORT}!`);
 });
