@@ -107,7 +107,6 @@ app.post("/survey", bodyUrlParser, function (req, res) {
 // });
 
 
-<<<<<<< HEAD
 // app.post('/survey', function (req, res) {
 //   new user({
 //     _id: req.body.userLocation,
@@ -116,10 +115,6 @@ app.post("/survey", bodyUrlParser, function (req, res) {
 //     else res.send('Successfully inserted!');
 //   });
 // });
-=======
-// Connect to the MongoDB Database.
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ourCities");
->>>>>>> 378352e5ea45897fabf65557cce1a22aba70de2d
 
 // Start server.
 app.listen(PORT, function () {
