@@ -10,6 +10,10 @@
 /build
 
 # misc
+<<<<<<< HEAD
+=======
+.env
+>>>>>>> 378352e5ea45897fabf65557cce1a22aba70de2d
 .DS_Store
 .env.local
 .env.development.local

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "LocoBounce",
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
@@ -21,14 +22,34 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"
+=======
+  "name": "LocoBounce-",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "cityseedsDB.js",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.3.16"
+>>>>>>> 378352e5ea45897fabf65557cce1a22aba70de2d
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+<<<<<<< HEAD
     "server": "nodemon",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
+=======
+    "client": "cd client && npm run start",
+>>>>>>> 378352e5ea45897fabf65557cce1a22aba70de2d
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
