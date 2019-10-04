@@ -21,6 +21,7 @@ import Jumbotron from './Jumbotron';
 import AlertSignedOut from './alert-signed-out/AlertSignedOut.js'
 import AlertAccountCreated from './alert-account-created/AlertAccountCreated';
 import HomePage from '../components/HomePage/Home';
+import City from "../pages/City";
 
 export default class App extends Component {
   render() {
@@ -33,16 +34,18 @@ export default class App extends Component {
               <FlashMessage />
 
               <Route exact path="/" component={() => <Jumbotron />} />
+
               <Switch>
-                  <Route path="/Safety" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/crime/?currency=USD" />} />
-                  <Route path="/Salaries" exact render={() => <Teleport src="https://teleport.org/cities/pittsburgh/widget/salaries/?currency=USD" />} />
-                  <Route path="/Startups" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/startup/?currency=USD" />} />
-                  <Route path="/Lgbt" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/tolerance/?currency=USD" />} />
-                  <Route path="/Education" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/education/?currency=USD" />} />
-                  <Route path="/Cost" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/costs/?currency=USD" />} />
-                  <Route path="/Climate" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/weather/?currency=USD" />} />
-                  <Route path="/Qaulity" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/scores/?currency=USD" />} />
-                </Switch>
+                <Route exact path="/api/cities" component={City} />
+                <Route path="/Safety" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/crime/?currency=USD" />} />
+                <Route path="/Salaries" exact render={() => <Teleport src="https://teleport.org/cities/pittsburgh/widget/salaries/?currency=USD" />} />
+                <Route path="/Startups" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/startup/?currency=USD" />} />
+                <Route path="/Lgbt" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/tolerance/?currency=USD" />} />
+                <Route path="/Education" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/education/?currency=USD" />} />
+                <Route path="/Cost" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/costs/?currency=USD" />} />
+                <Route path="/Climate" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/weather/?currency=USD" />} />
+                <Route path="/Qaulity" exact render={() => <Teleport src="https://teleport.org/cities/philadelphia/widget/scores/?currency=USD" />} />
+              </Switch>
               <HomePage />
 
               <Route exact path="/login" component={() => <Login />} />

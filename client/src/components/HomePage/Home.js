@@ -64,8 +64,8 @@ export default class HomePage extends React.Component {
                             {/* Input Box (For Searching, Obviously) */}
                             <div className="container">
                                 <form method="POST" action="/survey">
-                                    <input type="text" id="sSurvey" class="form-control mb-4" placeholder="Pittsburgh" />
-                                    <input type="submit" className="btn btn-default border-success m-2" value="Submit Feedback" />
+                                    <input type="text" name="userLocation" className="form-control mb-4" placeholder="Pittsburgh" />
+                                    <input type="submit" className="press press-teal text-white m-2" value="Submit Feedback" />
                                 </form>
                             </div>
                         </div>

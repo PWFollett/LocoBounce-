@@ -25,7 +25,7 @@ const Navbar = props => {
             {/* Navbar Brand */}
             <Link className="navbar-brand" to="/">
               <h1 className="animated bounce" id="locoLogo">
-                <img src="https://github.com/PWFollett/LocoBounce-/blob/master/src/assets/images/locoLogo.png?raw=true" alt="locoLogo.png" />
+                <img className="hvr-bounce-in" src="https://github.com/PWFollett/LocoBounce-/blob/master/client/src/assets/images/locoLogo.png?raw=true" alt="locoLogo.png" />
               </h1>
             </Link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
