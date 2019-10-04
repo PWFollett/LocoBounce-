@@ -50,22 +50,22 @@ export default class HomePage extends React.Component {
                                     </div>
                                 </li>
                             </ul>
-
                         </div>
                         {/* Search Function Card */}
                         <div className="card mb-4 border-success shadow-sm">
                             {/* Search Function Header */}
                             <div className="card-header">
-                                <h4 className="text-success">LocoBounce Search <i className="fa fa-search" aria-hidden="true"></i></h4>
+                                <h4 className="text-success">LocoBounce User Survey <i className="fa fa-search" aria-hidden="true"></i></h4>
                             </div>
                             {/* Search Function Context */}
                             <p className="card-text p-2 text-success">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus et justo nec volutpat. Ut tempus risus at orci venenatis pulvinar. Nunc sed finibus dui. Nullam id tortor.
+                                LocoBounce wants to know what country you're from. This way, we can get to know our users and better tailer our default toolbelt locations to best match our users. Simply type the name of your country into the box below. We'd greatly appreciate your feedback!
                             </p>
                             {/* Input Box (For Searching, Obviously) */}
                             <div className="container">
-                                <form>
-                                    <input type="text" className="form-control" id="search" placeholder="Lorem ipsum dolor sit amet...." />
+                                <form method="POST" action="/survey">
+                                    <input type="text" id="sSurvey" class="form-control mb-4" placeholder="Pittsburgh" />
+                                    <input type="submit" className="btn btn-default border-success m-2" value="Submit Feedback" />
                                 </form>
                             </div>
                         </div>
