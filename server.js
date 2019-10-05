@@ -4,17 +4,17 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const mongoose = require("mongoose");
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 const apiRoutes = require('./routes')
 const PORT = process.env.PORT || 3000;
 
-const db = require("./models");
+
 
 const citySeedsDB = require("./citySeedsDB");
 
 // create application/json parser
 //var jsonParser = bodyParser.json()
- var bodyUrlParser =  bodyParser.urlencoded({ extended: true });
+var bodyUrlParser = bodyParser.urlencoded({ extended: true });
 
 
 // Required Routes.
@@ -75,22 +75,7 @@ connectionDB.once("open", function () {
   console.log("Connected to Mongoose!");
 });
 
-app.post("/survey", bodyUrlParser, function (req, res) {
-  console.log('submitting survey', req.data && req.data.userLocation)
-  res.send('submitted!')
-  return;
 
-
-  db.Survey.create({ userLocation: "Database Entry." }, function (err, response) {
-    // If There Are Errors, Handle Them. 
-    if (err) {
-      console.log(err);
-    } else {
-      res.json(response);
-      console.log(response);
-    }
-  });
-});
 
 
 // app.get("/api/cities", function (req, res) {

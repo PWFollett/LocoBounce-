@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const db = require("./public/models");
+const City = require("./models/cities");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ourCities");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/surveyDB");
 
 const citySeed = [
   { name: "aarhus" },
@@ -270,8 +270,8 @@ const citySeed = [
   { name: "zurich" }
 ];
 
-db.City.remove({})
-  .then(() => db.City.collection.insertMany(citySeed))
+City.remove({})
+  .then(() => City.collection.insertMany(citySeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     // process.exit(0);
