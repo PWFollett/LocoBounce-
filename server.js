@@ -8,8 +8,6 @@ var bodyParser = require('body-parser');
 const apiRoutes = require('./routes')
 const PORT = process.env.PORT || 3000;
 
-
-
 const citySeedsDB = require("./citySeedsDB");
 
 // create application/json parser
@@ -46,6 +44,7 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'client/build')));
 
 
+
 app.use('/', apiRoutes);
 // Set Your Routes Here.
 //app.get('/', (req, res, next) => routeHome(req, res, next))
@@ -61,6 +60,7 @@ app.use('/', apiRoutes);
 // });
 
 // Survey Database.
+
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/surveyDB";
 mongoose.connect(MONGODB_URI);
 
